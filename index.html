@@ -143,6 +143,32 @@ nav::after { content:''; position:absolute; inset:0; background:linear-gradient(
 .int-sb { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--dim); font-weight:600; }
 
 /* CONTACT */
+.news{padding:120px 56px;background:var(--ink);}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(242,237,230,0.025);}
+.news-card{background:var(--ink);padding:32px 28px;transition:all 0.3s;position:relative;overflow:hidden;text-decoration:none;color:var(--paper);display:flex;flex-direction:column;gap:12px;}
+.news-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),var(--rust));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.news-card:hover::before{transform:scaleX(1);}
+.news-card:hover{background:#0d0d0d;}
+.news-src{font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.news-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;line-height:1.35;}
+.news-desc{font-family:'Crimson Pro',serif;font-size:0.9rem;line-height:1.7;color:var(--dim);flex:1;}
+.news-date{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--dim2);font-weight:600;}
+.news-loading{grid-column:1/-1;text-align:center;padding:60px;font-family:'Crimson Pro',serif;font-style:italic;color:var(--dim);}
+.calendar{padding:120px 56px;background:#040404;}
+.cal-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.cal-h{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;}
+.cal-h em{font-style:italic;color:var(--gold2);display:block;}
+.cal-p{font-family:'Crimson Pro',serif;font-size:1.05rem;line-height:1.9;color:var(--dim);font-style:italic;margin-top:24px;margin-bottom:40px;}
+.cal-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;background:var(--gold);color:var(--ink);font-size:0.65rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;position:relative;overflow:hidden;}
+.cal-btn::after{content:'';position:absolute;inset:0;background:var(--gold2);transform:translateX(-100%);transition:transform 0.35s ease;}
+.cal-btn:hover::after{transform:translateX(0);}
+.cal-btn span{position:relative;z-index:1;}
+.cal-right{display:flex;flex-direction:column;gap:2px;background:rgba(242,237,230,0.02);}
+.cal-feat{padding:28px 32px;background:var(--ink);border-left:2px solid transparent;transition:all 0.3s;}
+.cal-feat:hover{border-color:var(--gold);background:#0a0a0a;}
+.cf-icon{font-size:1.2rem;margin-bottom:8px;}
+.cf-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:4px;}
+.cf-desc{font-size:0.75rem;color:var(--dim);line-height:1.6;}
 .contact { padding:140px 56px 100px; position:relative; overflow:hidden; }
 .contact-bg { position:absolute; bottom:-60px; left:-30px; font-family:'Playfair Display',serif; font-size:22rem; font-weight:900; color:rgba(242,237,230,0.012); line-height:1; pointer-events:none; user-select:none; white-space:nowrap; }
 .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; position:relative; z-index:2; }
@@ -348,6 +374,28 @@ footer { padding:26px 56px; border-top:1px solid rgba(242,237,230,0.05); display
   </div>
 </section>
 
+<section class="news" id="news">
+  <div class="s-lbl rev">Noticias</div>
+  <div class="news-grid" id="newsGrid">
+    <div class="news-loading">Cargando noticias recientes...</div>
+  </div>
+</section>
+<section class="calendar" id="calendar">
+  <div class="s-lbl rev">Agenda una reunión</div>
+  <div class="cal-inner">
+    <div class="cal-left rev">
+      <h2 class="cal-h">Conversemos<br><em>en persona</em></h2>
+      <p class="cal-p">¿Tienes un proyecto, una propuesta o simplemente quieres conocerme? Agenda una videollamada directamente en mi calendario.</p>
+      <a href="https://calendly.com/mateorosselot/30min" target="_blank" class="cal-btn"><span>📅 Agendar reunión por Zoom</span></a>
+    </div>
+    <div class="cal-right rev">
+      <div class="cal-feat"><div class="cf-icon">⚡</div><div class="cf-title">Confirmación inmediata</div><div class="cf-desc">Recibes confirmación y link de Zoom al instante.</div></div>
+      <div class="cal-feat"><div class="cf-icon">🕐</div><div class="cf-title">30 minutos</div><div class="cf-desc">Reuniones enfocadas y productivas.</div></div>
+      <div class="cal-feat"><div class="cf-icon">🌍</div><div class="cf-title">Cualquier zona horaria</div><div class="cf-desc">Me adapto a tu horario, donde estés.</div></div>
+      <div class="cal-feat"><div class="cf-icon">🔒</div><div class="cf-title">Sin compromiso</div><div class="cf-desc">Una conversación siempre vale la pena.</div></div>
+    </div>
+  </div>
+</section>
 <section class="contact" id="contact">
   <div class="contact-bg">MRF</div>
   <div class="s-lbl rev">Contacto</div>
